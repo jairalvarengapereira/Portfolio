@@ -1,0 +1,802 @@
+/* Zera margens, preenchimentos e aplica box-sizing para todos os elementos */
+* {
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  font-family: 'Poppins', sans-serif; /* Define a fonte padrão */
+}
+
+/* Habilita rolagem suave ao navegar por âncoras */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Declaração de variáveis CSS para cores reutilizáveis */
+:root {
+  --primaria: #4f46e5;         /* Azul principal */
+  --secundaria: #7c3aed;       /* Roxo secundário */
+  --escuro: #0f172a;           /* Fundo escuro */
+  --mais-escuro: #0a0f1c;      /* Fundo ainda mais escuro */
+  --claro: #e2e8f0;            /* Cor clara para textos */
+  --vidro: rgba(255, 255, 255, 0.1); /* Efeito translúcido */
+}
+
+/* Estilização base do body */
+body {
+  background-color: var(--escuro); /* Cor de fundo escura */
+  color: var(--claro); /* Cor padrão do texto */
+}
+
+.particulas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 10% 20%,var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%,var(--primaria) 0%, transparent 20%),
+    var(--mais-escuro);
+}
+
+/* Barra de navegação fixa no topo */
+.navegacao {
+  position: fixed; /* Fixa no topo da tela */
+  top: 0;
+  background: rgba(15, 23, 42, 0.8); /* Cor escura com transparência */
+  width: 100%;
+  z-index: 100; /* Garante que fique acima dos outros elementos */
+  padding: 1.5rem;
+}
+
+/* Lista de itens do menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none; /* Remove marcadores de lista */
+  gap: 3rem; /* Espaçamento entre links */
+}
+
+/* Estilo dos links do menu */
+.menu-link {
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* Animação do sublinhado ao passar o mouse */
+.menu-link::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.5s ease; /* Animação suave */
+}
+
+/* Exibe sublinhado ao hover */
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* Botão de menu hamburguer para telas menores */
+.menu-toggle {
+  display: none; /* Esconde em telas grandes */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--claro);
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* Esconde menu inicialmente */
+    flex-direction: column; /* Empilha os itens */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--escuro);
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o botão hamburguer */
+  }
+
+  .menu.active {
+    display: flex; /* Exibe o menu ao ativar toggle */
+  }
+
+  .menu {
+    gap: 1rem; /* Reduz espaçamento entre itens */
+  }
+}
+
+/* Estilo da foto de perfil */
+.foto-perfil {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.3); /* Sombra ao redor */
+  border-radius: 50%; /* Torna a imagem circular */
+  border: 4px solid var(--vidro); /* Borda translúcida */
+  margin-top: 100px; /* Espaço do topo */
+  animation: flutuar 3s ease-in-out infinite; /* Pisca a imagem */
+}
+
+/* Cabeçalho centralizado */
+.cabecalho {
+  min-height: 100vh; /* Altura mínima de tela cheia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Título principal */
+h1 {
+  font-size: 3rem;
+  color: var(--primaria);
+  font-weight: bold;
+  margin: 2px 0;
+  text-align: center;
+}
+
+/* Subtítulo */
+.cabecalho-subtitulo {
+  font-size: 1.5rem;
+  color: var(--claro);
+}
+
+/* Seção "Sobre" */
+.sobre {
+  padding: 6rem 2rem;
+}
+
+/* Título da seção */
+.sobre-titulo {
+  font-size: 3rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Caixa com descrição sobre */
+.sobre-caixa {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  text-align: justify;
+}
+
+/* Texto da seção sobre */
+.sobre-paragrafo {
+  font-size: 1.2rem;
+  color: var(--claro);
+  margin-bottom: 1rem;
+}
+
+/* Seção projetos */
+.projetos {
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título dos projetos */
+.projetos-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Grade de cartões de projeto */
+.projetos-caixa {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: fit-content;
+  justify-content: center;
+}
+
+/* Cartão individual de projeto */
+.projetos-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--vidro);
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* Animação ao passar mouse no projeto */
+.projetos-card:hover {
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* Imagem do projeto */
+.projetos-imagem {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Texto interno do projeto */
+.info-projetos {
+  padding: 0.5rem;
+}
+
+/* Parágrafo do projeto */
+.paragrafo-projetos {
+  color: rgb(226, 232, 240, 0.8); /* Leve transparência */
+  line-height: 1.25rem;
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+/* Seções de certificados e extras */
+.certificados, .extras {
+  padding: 6rem 2rem;
+}
+
+/* Título da seção de certificados */
+.certificados-titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Layout da galeria de certificados */
+.certificados-caixa {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Imagens dos certificados */
+.certificados-caixa img {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
+/* Zoom leve ao passar o mouse */
+.certificados-caixa img:hover {
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+/* Janela de visualização ampliada */
+.popup {
+  display: none; /* Esconde por padrão */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 9999;
+}
+
+/* Responsividade do popup */
+@media (max-width: 600px) {
+  .popup {
+    width: 95%;
+    height: auto;
+    max-height: 85vh;
+  }
+
+  .popup img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .certificados-caixa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificados-caixa img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Imagem dentro do popup */
+.popup img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* Botão de fechar popup */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Seção de contatos */
+.contatos {
+  padding: 6rem 2rem;
+}
+
+/* Título da seção de contato */
+.contatos-titulo {
+  font-size: 2.5rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Formulário de contato */
+.formulario-contato {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+/* Grupo de campos no formulário */
+.grupo-form {
+  margin-bottom: 1.5rem;
+}
+
+/* Campos do formulário */
+.campo-form {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--vidro);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: var(--claro);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+/* Foco no campo */
+.campo-form:focus {
+  border-color: var(--secundaria);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Botão de envio do formulário */
+.botao-form {
+  color: var(--claro);
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+/* Animação ao passar o mouse no botão */
+.botao-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  
+}
+
+
+
+
+/* =========================
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+:root{
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --mais-escuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+} 
+
+body{
+  background-color: var(--escuro);
+  color: var(--claro);
+}
+
+.navegacao{
+  position: fixed;
+  top: 0;
+  background: rgba(15,23,42,0.8);
+  width: 100%;
+  z-index:100;
+  padding: 1.5rem;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+} 
+
+ .menu-link{
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.menu-link::after{
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.5s ease;
+} 
+
+.menu-link:hover::after{
+  width: 100%;
+} 
+
+.menu-toggle {
+  display: none; 
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--claro);
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--escuro);
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+
+  .menu.active {
+    display: flex; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .menu {
+    gap: 1rem;
+  }
+}
+
+.foto-perfil{
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 20px rgba(79,70,229,0.3);
+  border-radius: 50%;
+  border: 4px solid var(--vidro);
+  margin-top: 100px;
+}
+
+.cabecalho{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1{
+  font-size: 3rem;
+  color: var(--primaria);
+  font-weight: bold;
+  margin: 2px 0;
+  text-align: center;
+}
+
+.cabecalho-subtitulo{
+  font-size: 1.5rem;
+  color: var(--claro);
+}
+
+.sobre{
+  padding: 6rem  2rem;
+}
+
+.sobre-titulo{
+  font-size: 3rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sobre-caixa{
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  text-align: justify;
+}
+
+.sobre-paragrafo{
+  font-size: 1.2rem;
+  color: var(--claro);
+  margin-bottom: 1rem;
+}
+
+.projetos{
+  padding: 6rem 2rem;
+}
+
+.projetos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.projetos-card{
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--vidro);
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.projetos-card:hover{
+  box-shadow: 0 10px 20px rgba(79,70,229,0.2);
+  transform: translateY(-10px) scale(1.03);
+}
+
+.projetos-caixa{
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: fit-content;
+  justify-content: center;
+}
+
+.projetos-titulo{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.projetos-imagem{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.info-projetos{
+  padding: 0.5rem;
+}
+
+.paragrafo-projetos{
+  color: rgb(226, 232, 240. 0.8);
+  line-height: 1.25rem;
+  text-align: justify;
+  padding: 0.5rem;
+} 
+
+.certificados, .extras{  
+  padding: 6rem 2rem;
+}
+
+.certificados-titulo{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.certificados-caixa {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.certificados-caixa img {
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 1;   
+}
+
+.certificados-caixa img:hover {
+  transform: scale(1.03);
+  z-index: 1; 
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 9999;
+  padding: 20px;
+}
+
+
+@media (max-width: 600px) {
+  .popup {
+    width: 95%; 
+    height: auto; 
+    max-height: 85vh;
+  }
+
+  .popup img {
+    max-width: 100%;
+    max-height: 80vh; 
+    object-fit: contain;
+  }
+
+  .certificados-caixa {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificados-caixa img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
+
+.contatos{
+  padding: 6rem 2rem;
+}
+
+.contatos-titulo{
+  font-size: 2.5rem;
+  color: var(--claro);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.formulario-contato{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.grupo-form{
+  margin-bottom: 1.5rem;
+}
+.campo-form{
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--vidro);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: var(--claro);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  outline: none;
+}
+
+.campo-form:focus{
+  border-color: var(--secundaria);
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.3);
+}
+
+.botao-form{
+  color: var(--claro);
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.botao-form:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(79,70,229,0.4);
+}  */
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Jair Alvarenga Pereira | Portfólio</title>
+</head>
+<body>
+  <div class="particulas"></div>
+  <nav class="navegacao">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="menu">
+      <li><a href="#inicio" class="menu-link">Início</a></li>
+      <li><a href="#sobre" class="menu-link">Sobre</a></li>
+      <li><a href="#projetos" class="menu-link">Projetos</a></li>
+      <li><a href="#certificados" class="menu-link">Certificações</a></li>
+      <li><a href="#extras" class="menu-link">Extras</a></li>
+      <li><a href="#contatos" class="menu-link">Contatos</a></li>
+      <li><a download href="./Docs/Jair Alvarenga Pereira - Curriculo.pdf" class="menu-link">Currículo</a></li>
+    </ul>
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <img src="img/rosto.jpg" alt="foto Jair" class="foto-perfil">
+    <h1>Jair Alvarenga Pereira</h1>
+    <p class="cabecalho-subtitulo">Analista Desenvolvedor</p>
+  </main>
+
+  <section id="sobre" class="sobre"> 
+    <h2 class="sobre-titulo">Sobre Mim</h2>
+    <div class="sobre-caixa">
+      <p class="sobre-paragrafo">
+        Olá! Meu nome é Jair Alvarenga Pereira, sou analista desenvolvedor e apaixonado por tecnologia. Formado em Tecnologia em Informática, pelo Centro Universitário Newton Paiva, desde 2003, atualmente, estou cursando pós-graduação EAD em Ciência de Dados pela Facuminas.
+      </p>
+    </div>
+  </section>
+
+  <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Alguns de meus projetos</h2>
+    <div class="projetos-caixa">
+      <!-- Agendei -->
+      <div class="projetos-card">
+        <div class="caixa-textps-projeto">
+          <h3 class="info-projetos">Agendei</h3>
+          <img src="./img/Agendei-Web.png" class="projetos-imagem" alt="Agendei-Web">
+          <p class="paragrafo-projetos">
+            Aplicação desenvolvida em NodeJs, React Native e ReactJS para agendamentos de serviços médicos. Utiliza banco de dados SQLite
+          </p>
+        </div>
+      </div>
+      <!-- Afetivograma -->
+      <div class="projetos-card">
+        <div class="caixa-textps-projeto">
+          <h3 class="info-projetos">Afetivograma</h3>
+          <img src="./img/Afetivograma.png" class="projetos-imagem" alt="Afetivograma">
+          <p class="paragrafo-projetos">
+            Aplicação mobile desenvolvida em Rad Studio Delphi XE 11.3 e SQLite, para avaliação de afetividade de pacientes em tratamentos de saúde mental.
+          </p>
+        </div>
+      </div>
+      <!-- Cadastro de Usuários -->
+      <div class="projetos-card">
+        <div class="caixa-textps-projeto">
+          <h3 class="info-projetos">CadUsuario</h3>
+          <img src="./img/CadUsuario.jpg" class="projetos-imagem" alt="CadUsuario">
+          <p class="paragrafo-projetos">
+            Aplicação CRUD para cadastro de usuários, desenvolvida em ReactJs com banco de dados MongoDB.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificados" class="certificados">
+    <h2 class="certificados-titulo">Certificações</h2>
+    <div class="certificados-caixa">
+      <img src="./img/Newton Paiva.jpg" alt="Certificado Newton Paiva" onclick="openPopup(this.src)">
+      <img src="./img/Infinity.png" alt="Certificado Infinity" onclick="openPopup(this.src)">
+    </div>
+    <div id="popup-container" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-image">
+    </div>
+  </section>
+
+  <section id="extras" class="extras">
+    <h2 class="certificados-titulo">Cursos Extras</h2>
+    <div class="certificados-caixa">
+      <img src="./img/Delphi 2006.jpg" alt="Certificado Infinity" onclick="openPopup(this.src)">
+      <img src="./img/JornadaJS.png" alt="Certificado Jornada JS" onclick="openPopup(this.src)">
+      <img src="./img/JavaBasico.png" alt="Certificado Java Básico" onclick="openPopup(this.src)">
+      <img src="./img/Outsystems.jpg" alt="Certificado Outsystems" onclick="openPopup(this.src)">
+    </div>
+    <div id="popup-container" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-image">
+    </div>
+  </section>
+
+  <section id="contatos" class="contatos">
+    <h2 class="contatos-titulo">Entre em contato</h2>
+    <form onsubmit="enviarWhats(event)" id="formulario" class="formulario-contato" action="">
+      <div class="grupo-form">
+        <input id="nome" class="campo-form" type="text" placeholder="Nome">
+      </div>
+      <div class="grupo-form">
+        <textarea id="mensagem" class="campo-form" placeholder="Digite uma mensagem"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar Whatsapp</button>
+    </form>
+  </section>
+
+</body>
+<script src="script.js"></script>
+</html>
