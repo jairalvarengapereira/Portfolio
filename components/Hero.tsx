@@ -84,13 +84,14 @@ export default function Hero() {
               className="flex flex-wrap gap-4"
             >
               <a
-                href="#projetos"
+                href="/jairap-dev.pdf"
+                download
                 className="group relative inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-medium rounded-xl transition-all duration-300 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/25"
               >
-                <span>Ver Projetos</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
+                <span>Baixar Currículo</span>
               </a>
               <a
                 href="#contato"
