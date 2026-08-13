@@ -1,0 +1,21 @@
+Aja como um Desenvolvedor Web Sênior e especialista em UI/UX para criar uma landing page de portfólio profissional, moderna e responsiva.
+
+### Contexto do Perfil:
+Jair Alvarenga Pereira é um Analista de TI com mais de 30 anos de experiência, especialista em Delphi que está em transição de carreira para o desenvolvimento web moderno (Full Stack: React, Node.js, TypeScript).
+- **Resumo:** Sólida bagagem em sistemas corporativos legados, migração de dados e agora focado em tecnologias web escaláveis.
+- **Diferencial:** A maturidade e a profundidade técnica de quem construiu sistemas complexos por décadas, aliado à energia de quem domina novas tecnologias.
+
+### Requisitos da Landing Page:
+1. **Design:** Moderno, minimalista e sofisticado. Use uma paleta de cores sóbria (tons de azul escuro, cinza e branco). Animações sutis (fade-in, scroll reveal) usando Framer Motion ou GSAP para dar dinamismo sem tirar a seriedade.
+2. **Estrutura:**
+   - **Hero Section:** Foto profissional (anexa), título de impacto, breve resumo e botão de CTA ("Baixar Currículo" e "Contato").
+   - **Sobre:** Destaque a transição do legado para a modernidade (a experiência de 30 anos como trunfo).
+   - **Tecnologias:** Ícones de Delphi, React, Node.js, SQL, etc.
+   - **Projetos:** Card grid responsivo para exibir projetos do GitHub (com link para repositório e demo).
+   - **Contato:** Formulário de contato, links para LinkedIn, WhatsApp e E-mail (jairap.dev@gmail.com).
+3. **Tecnologias sugeridas para implementação:** React, Next.js, Tailwind CSS (para estilização), Framer Motion (para animações) e integração com GitHub API para trazer os projetos automaticamente.
+
+### Objetivo do Prompt para o AI Coding Tool:
+"Crie uma estrutura de projeto Next.js + Tailwind CSS. Implemente uma página 'Home' que conte minha trajetória, destaque minhas competências técnicas (do Delphi ao React), exiba meus projetos públicos do GitHub e possua uma seção de contato funcional. A UI deve ser premium, focada em conversão para recrutadores, usando componentes elegantes com animações de scroll. O código deve ser limpo, modularizado e prontamente publicável."
+
+Por favor, gere o código base para os componentes principais (Hero, Projetos, Sobre) e o arquivo de configuração para as animações.
