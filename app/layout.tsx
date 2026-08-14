@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AnimatedBackground from '@/components/AnimatedBackground'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className="bg-dark-950 antialiased">{children}</body>
+      <body className="bg-dark-950 antialiased">
+        <AnimatedBackground />
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   )
 }
