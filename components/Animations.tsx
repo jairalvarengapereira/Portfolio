@@ -22,7 +22,7 @@ export function FadeIn({ children, delay = 0, direction = 'up', className = '' }
   className?: string
 }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: false, amount: 0.3 })
 
   const variants = {
     hidden: {
@@ -57,7 +57,7 @@ export function ScaleIn({ children, delay = 0, className = '' }: {
   className?: string
 }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: false, amount: 0.3 })
 
   return (
     <motion.div
@@ -78,7 +78,7 @@ export function StaggerContainer({ children, className = '', staggerDelay = 0.1 
   staggerDelay?: number
 }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: false, amount: 0.2 })
 
   return (
     <motion.div
