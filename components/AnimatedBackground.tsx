@@ -26,8 +26,8 @@ export default function AnimatedBackground() {
     const mouse = { x: -1000, y: -1000 }
 
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      canvas.width = document.documentElement.clientWidth
+      canvas.height = document.documentElement.clientHeight
     }
 
     const createParticles = () => {
@@ -157,8 +157,8 @@ export default function AnimatedBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex: 0 }}
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: 0, width: '100vw', height: '100vh', overflow: 'hidden' }}
     />
   )
 }
