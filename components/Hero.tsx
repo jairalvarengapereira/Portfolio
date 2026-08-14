@@ -16,10 +16,6 @@ export default function Hero() {
 
   return (
     <section id="inicio" ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]" />
-
       <motion.div
         style={{ opacity, y, scale }}
         className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20"

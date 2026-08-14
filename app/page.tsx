@@ -10,7 +10,7 @@ import { ScrollProgress } from '@/components/Animations'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-dark-950">
+    <main className="min-h-screen">
       <ScrollProgress />
       <Header />
       <Hero />
