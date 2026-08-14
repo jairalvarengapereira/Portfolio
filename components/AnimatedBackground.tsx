@@ -37,14 +37,14 @@ export default function AnimatedBackground() {
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
+        size: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.3,
       }))
     }
 
     const drawGrid = () => {
       const spacing = 60
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.03)'
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.06)'
       ctx.lineWidth = 0.5
 
       for (let x = 0; x <= canvas.width; x += spacing) {
@@ -85,7 +85,7 @@ export default function AnimatedBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < maxDist) {
-            const opacity = (1 - dist / maxDist) * 0.15
+            const opacity = (1 - dist / maxDist) * 0.25
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
