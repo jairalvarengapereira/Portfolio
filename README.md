@@ -1,6 +1,12 @@
-# Portfólio - Jair Alvarenga Pereira
+<p align="center">
+  <img src="public/Logo_circ.png" alt="Jair Alvarenga Pereira" width="150" />
+</p>
 
-Portfólio profissional desenvolvido com Next.js, Tailwind CSS e Framer Motion.
+<h1 align="center">Portfólio - Jair Alvarenga Pereira</h1>
+
+<p align="center">
+  Portfólio profissional desenvolvido com Next.js, Tailwind CSS e Framer Motion.
+</p>
 
 ## Tecnologias Utilizadas
 
@@ -52,7 +58,9 @@ portfolio-nextjs/
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components/
+│   ├── AnimatedBackground.tsx
 │   ├── Animations.tsx
+│   ├── Certificados.tsx
 │   ├── Contato.tsx
 │   ├── Footer.tsx
 │   ├── Header.tsx
@@ -72,11 +80,14 @@ portfolio-nextjs/
 
 - Design responsivo e moderno
 - Animações suaves com Framer Motion
+- Fundo animado com partículas interativas
 - Integração com API do GitHub para exibir projetos
+- Modal de visualização de certificados
 - Formulário de contato funcional
 - Navegação suave entre seções
 - Header fixo com efeito de scroll
 - Barra de progresso de scroll
+- Suporte a PWA com ícone personalizado
 
 ## Personalização
 
