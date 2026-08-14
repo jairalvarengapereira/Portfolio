@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <a href="#inicio" className="inline-block mb-2">
-                <img src="/Logo.png" alt="Jair AP" className="h-9 w-auto" />
+                <img src="/Logo_circ.png" alt="Jair AP" className="h-10 w-10 rounded-full object-cover" />
               </a>
               <p className="text-dark-500 text-sm">
                 Transformando experiência em inovação.

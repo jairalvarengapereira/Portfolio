@@ -52,7 +52,7 @@ export default function Header() {
           whileTap={{ scale: 0.95 }}
           className="relative flex items-center"
         >
-          <img src="/Logo.png" alt="Jair AP" className="h-9 w-auto" />
+          <img src="/Logo_circ.png" alt="Jair AP" className="h-10 w-10 rounded-full object-cover" />
         </motion.a>
 
         <nav className="hidden md:flex items-center gap-1">

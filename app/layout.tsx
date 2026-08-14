@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: 'Portfólio profissional - +30 anos de experiência em TI, especialista em Delphi em transição para React, Node.js e TypeScript',
   keywords: ['Jair Alvarenga', 'Analista de TI', 'Full Stack', 'React', 'Node.js', 'TypeScript', 'Delphi', 'Portfólio'],
   icons: {
-    icon: '/Logo.png',
-    apple: '/Logo.png',
+    icon: '/Logo_circ.png',
+    apple: '/Logo_circ.png',
   },
   manifest: '/manifest.json',
 }
