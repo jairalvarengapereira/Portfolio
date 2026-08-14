@@ -49,9 +49,8 @@ export default function Footer() {
         <FadeIn>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
-              <a href="#inicio" className="text-2xl font-bold inline-block mb-2">
-                <span className="text-white">JA</span>
-                <span className="text-blue-500">P</span>
+              <a href="#inicio" className="inline-block mb-2">
+                <img src="/Logo.png" alt="Jair AP" className="h-9 w-auto" />
               </a>
               <p className="text-dark-500 text-sm">
                 Transformando experiência em inovação.

@@ -50,18 +50,9 @@ export default function Header() {
           href="#inicio"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative"
+          className="relative flex items-center"
         >
-          <span className="text-2xl font-bold tracking-tight">
-            <span className="text-white">JA</span>
-            <span className="text-blue-500">P</span>
-          </span>
-          <motion.div
-            className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-blue-500 to-blue-600"
-            initial={{ width: 0 }}
-            whileHover={{ width: '100%' }}
-            transition={{ duration: 0.3 }}
-          />
+          <img src="/Logo.png" alt="Jair AP" className="h-9 w-auto" />
         </motion.a>
 
         <nav className="hidden md:flex items-center gap-1">
