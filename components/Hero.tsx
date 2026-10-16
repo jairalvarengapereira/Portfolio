@@ -23,7 +23,8 @@ export default function Hero() {
         <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/20 mb-8"
             >
@@ -33,7 +34,8 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="flex items-center gap-6 mb-6"
             >
@@ -56,7 +58,8 @@ export default function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.4 }}
               className="text-xl md:text-2xl text-dark-400 font-light mb-4"
             >
@@ -65,7 +68,8 @@ export default function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.5 }}
               className="text-dark-500 text-lg max-w-xl mb-10 leading-relaxed"
             >
@@ -75,7 +79,8 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
@@ -102,7 +107,8 @@ export default function Hero() {
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.8 }}
               className="flex items-center gap-8 mt-12 pt-8 border-t border-white/5"
             >
