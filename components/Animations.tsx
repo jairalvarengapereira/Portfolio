@@ -9,7 +9,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 origin-left z-[100]"
+      className="fixed top-0 left-0 right-0 h-[2px] bg-linear-to-r from-blue-500 via-blue-400 to-blue-600 origin-left z-100"
       style={{ scaleX }}
     />
   )
@@ -146,7 +146,7 @@ export function GlowCard({ children, className = '' }: {
       transition={{ duration: 0.3 }}
       className={`relative group ${className}`}
     >
-      <div className="absolute -inset-[1px] bg-gradient-to-r from-blue-600/20 via-blue-400/20 to-blue-600/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute -inset-px bg-linear-to-r from-blue-600/20 via-blue-400/20 to-blue-600/20 rounded-2xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative glass rounded-2xl p-6 h-full">
         {children}
       </div>

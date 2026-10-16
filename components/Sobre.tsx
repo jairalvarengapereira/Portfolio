@@ -48,7 +48,7 @@ const highlights = [
 export default function Sobre() {
   return (
     <section id="sobre" className="relative py-32">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
         <FadeIn className="text-center mb-20">

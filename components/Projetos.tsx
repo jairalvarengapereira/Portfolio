@@ -24,7 +24,7 @@ export default function Projetos() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          'https://api.github.com/users/jairap/repos?sort=updated&per_page=6'
+          'https://api.github.com/users/jairalvarengapereira/repos?sort=updated&per_page=6'
         )
         const data = await response.json()
         setProjects(data)
@@ -34,7 +34,7 @@ export default function Projetos() {
             id: 1,
             name: 'portfolio-nextjs',
             description: 'Portfólio profissional desenvolvido com Next.js, Tailwind CSS e Framer Motion',
-            html_url: 'https://github.com/dashboard/portfolio-nextjs',
+            html_url: 'https://github.com/jairalvarengapereira/portfolio-nextjs',
             homepage: null,
             language: 'TypeScript',
             topics: ['nextjs', 'tailwindcss', 'react'],
@@ -45,7 +45,7 @@ export default function Projetos() {
             id: 2,
             name: 'api-nodejs',
             description: 'API RESTful desenvolvida com Node.js, Express e TypeScript',
-            html_url: 'https://github.com/dashboard/api-nodejs',
+            html_url: 'https://github.com/jairalvarengapereira/api-nodejs',
             homepage: null,
             language: 'TypeScript',
             topics: ['nodejs', 'express', 'typescript'],
@@ -56,7 +56,7 @@ export default function Projetos() {
             id: 3,
             name: 'react-dashboard',
             description: 'Dashboard administrativo desenvolvido com React e Material-UI',
-            html_url: 'https://github.com/dashboard/react-dashboard',
+            html_url: 'https://github.com/jairalvarengapereira/react-dashboard',
             homepage: null,
             language: 'JavaScript',
             topics: ['react', 'material-ui', 'dashboard'],
@@ -84,7 +84,7 @@ export default function Projetos() {
 
   return (
     <section id="projetos" className="relative py-32">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
         <FadeIn className="text-center mb-20">
@@ -127,7 +127,7 @@ export default function Projetos() {
                   </div>
 
                   <h3 className="text-lg font-bold text-white mb-2">{project.name}</h3>
-                  <p className="text-sm text-dark-400 mb-4 flex-grow line-clamp-2">
+                  <p className="text-sm text-dark-400 mb-4 grow line-clamp-2">
                     {project.description || 'Sem descrição disponível'}
                   </p>
 
@@ -172,7 +172,7 @@ export default function Projetos() {
 
         <FadeIn delay={0.4} className="mt-12 text-center">
           <motion.a
-            href="https://github.com/dashboard"
+            href="https://github.com/jairalvarengapereira"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}

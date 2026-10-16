@@ -37,7 +37,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="flex items-center gap-6 mb-6"
             >
-              <div className="relative w-20 h-24 md:w-28 md:h-36 rounded-2xl glass-strong overflow-hidden border-glow flex-shrink-0">
+              <div className="relative w-20 h-24 md:w-28 md:h-36 rounded-2xl glass-strong overflow-hidden border-glow shrink-0">
                 <img
                   src="/Jair.png"
                   alt="Jair Alvarenga Pereira"

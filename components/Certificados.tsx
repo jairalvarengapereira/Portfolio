@@ -19,7 +19,7 @@ export default function Certificados() {
 
   return (
     <section id="certificados" className="relative py-32">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
         <FadeIn className="text-center mb-20">
@@ -98,7 +98,7 @@ export default function Certificados() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-200 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs"
             onClick={() => setSelectedCert(null)}
           >
             <motion.div
