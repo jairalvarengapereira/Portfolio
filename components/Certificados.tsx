@@ -76,7 +76,7 @@ export default function Certificados() {
                 </p>
               </div>
               <motion.a
-                href="/curriculo.pdf"
+                href="/jairap-dev.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
